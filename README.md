@@ -1,2 +1,2 @@
 # Exercises_of_python
-Este es un espacio netamente para ejercicios de lengua de programacion python
+Este es un espacio netamente para ejercicios de lenguaje de programacion python

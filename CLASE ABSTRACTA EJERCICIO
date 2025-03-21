@@ -1,0 +1,41 @@
+from abc import ABC, abstractmethod
+class Forma_de_pago(ABC):
+     def __init__(self, nombre,edad, cedula_ciudadania):
+        self.nombre = nombre
+        self.edad=edad
+        self.cedula_ciudadania = cedula_ciudadania
+        @abstractmethod
+        def mostrar_informacion(self):
+            pass
+class efectivo(Forma_de_pago):
+    def __init__(self, nombre,edad, cedula_ciudadania,tipo_de_pago ):
+            super()._init_(nombre,edad, cedula_ciudadania)
+            self.tipo_de_pago = tipo_de_pago
+    def mostrar_informacion(self):
+        return f"Nombre: {self.nombre},Edad: {self.edad} Numero de C.c: {self.cedula_ciudadania},tipo de pago: {self.tipo_de_pago} "
+class Tarjeta_de_credito(Forma_de_pago):
+    def __init__(self, nombre, edad, cedula_ciudadania,tipo_de_pago ):
+          super().__init__(nombre,edad,cedula_ciudadania)
+          self.tipo_de_pago = tipo_de_pago
+    def mostrar_informacion(self):
+        return f"Nombre: {self.nombre},Edad: {self.edad} Numero de C.c: {self.cedula_ciudadania},tipo de pago: {self.tipo_de_pago} "
+
+class Tarjeta_debito(Forma_de_pago):
+    def __init__(self, nombre, edad, cedula_ciudadania,tipo_de_pago):
+          super()._init_(nombre,edad, cedula_ciudadania)
+          self.tipo_de_pago = tipo_de_pago
+    def mostrar_informacion(self):
+        return f"Nombre: {self.nombre},Edad: {self.edad} Numero de C.c: {self.cedula_ciudadania},tipo de pago: {self.tipo_de_pago} "
+class Nequi(Forma_de_pago):
+    def __init__(self, nombre, edad, cedula_ciudadania,tipo_de_pago ):
+          super()._init_(nombre,edad, cedula_ciudadania)
+          self.tipo_de_pago = tipo_de_pago
+          
+    def mostrar_informacion(self):
+        return f"Nombre: {self.nombre},Edad: {self.edad} Numero de C.c: {self.cedula_ciudadania},tipo de pago: {self.tipo_de_pago} "
+    
+
+Cliente_uno = Tarjeta_de_credito("Carlos Pérez", 20, "1.070.680ñ.889", "Credito")
+Cliente_dos= Nequi("Ana Gómez", 16, "1.070.579.567","Nequi")
+print(Cliente_uno.mostrar_informacion())
+print(Cliente_dos.mostrar_informacion())

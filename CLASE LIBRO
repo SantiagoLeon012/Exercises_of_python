@@ -1,0 +1,30 @@
+class Libro:
+    def _init_(self, titulo, autor, año_publicacion):
+        self.titulo = titulo
+        self.autor = autor
+        self.año_publicacion = año_publicacion
+        self.disponible = True  
+
+    def prestar(self):
+        if self.disponible:
+            self.disponible = False
+            print(f"El libro '{self.titulo}' ha sido prestado.")
+        else:
+            print(f"El libro '{self.titulo}' no está disponible.")
+
+    def devolver(self):
+        self.disponible = True
+        print(f"El libro '{self.titulo}' ha sido devuelto.")
+
+    def informacion(self):
+        estado = "Disponible" if self.disponible else "Prestado"
+        return f"Título: {self.titulo}, Autor: {self.autor}, Año: {self.año_publicacion}, Estado: {estado}"
+
+# Crear algunos libros
+libro1 = Libro("El tunel", "Ernesto Sabato", 1948)
+libro2 = Libro("Maria", "Jorge Isaacs", 1867)
+
+libro2.prestar()
+libro2.prestar()
+libro2.devolver()
+print(libro2.informacion())

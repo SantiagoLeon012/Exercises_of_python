@@ -1,0 +1,16 @@
+from abc import ABC, abstractmethod
+valor_por_hora=int(7500) 
+class empleado (ABC):
+        def __init__(self, nombre):
+            self.nombre=nombre
+            @abstractmethod
+            def salario_(self):
+                pass
+class mostrar_horas(empleado):
+    def __init__(self, nombre,horas_trabajadas):
+        super().__init__(nombre)
+        self.horas_trabajadas=horas_trabajadas 
+    def salario_(self):
+        return f"Nombre:{self.nombre}\nHoras_trabajadas: {self.horas_trabajadas}\nSalario: {self.horas_trabajadas*valor_por_hora}"
+empleado_uno= mostrar_horas("Andres",20)
+print(empleado_uno.salario_())

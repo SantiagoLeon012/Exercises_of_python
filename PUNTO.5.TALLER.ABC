@@ -1,0 +1,41 @@
+while True:
+    from abc import ABC, abstractmethod 
+
+    class menu (ABC):
+        def __init__(self, carnes,pescados,bebidas,postres):
+            self.carnes=carnes
+            self.pescados=pescados
+            self.bebidas=bebidas
+            self.postres=postres
+        @abstractmethod
+        def mostrar_menu(self):
+            pass
+
+    class mostrar_menu(menu):
+        def mostrar_menu(self):
+            print("1.Carnes", "2.pescados","3.bebidas", "4.postres", "5.salir")
+            usuario=int(input("Seleccione la opcion en valor numerico:"))
+            if usuario ==1:
+                print("1.churrasco ", "2.lomo de cerdo ", "3.baby beef")
+                usuario2=int(input("selecione la carne que deseas: "))
+                print("Seleccionaste",usuario2)
+            if usuario ==2:
+                print("1.trucha grille ", "2.bagre en salsa ", "3.mojarra frita")
+                usuario2=int(input("selecione el pescado  que deseas: "))
+                print("Seleccionaste",usuario2)
+            if usuario ==3:
+                print("1.Coca cola ", "2.Colombiana ", "3.Kola sol")
+                usuario2=int(input("selecione la bebida que deseas: "))
+                print("Seleccionaste",usuario2)
+            if usuario ==4:
+                print("1.almojabana con bocadillo ", "2.queso gratinado ", "3.copa de helado")
+                usuario2=int(input("selecione el postre que deseas: "))
+                print("Seleccionaste",usuario2)
+            if usuario==5:
+                print("¡felicidades!, interactuaste correctamente con el menu")
+                exit()
+            
+
+
+    menu=mostrar_menu([],[],[],[])
+    menu.mostrar_menu()

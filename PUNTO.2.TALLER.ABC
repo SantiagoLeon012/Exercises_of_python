@@ -1,0 +1,24 @@
+from abc import ABC, abstractmethod
+nota1=1.0
+nota2=2.0
+nota3=4.5
+nota4=5.0
+nota5=4.0
+sumi=nota1+nota2+nota3+nota4+nota5
+class Estudiante (ABC):
+        def __init__(self, nombre, grado, edad):
+            self.nombre= nombre
+            self.grado=grado
+            self.edad=edad
+        @abstractmethod
+        def promedio_notas(self):
+            pass
+class Mostrar_notas(Estudiante):
+    def __init__(self,nombre, grado, edad, promedio_de_notas):
+        super().__init__(nombre, grado, edad)
+        self.promedio_de_notas=promedio_de_notas
+    def promedio_notas(self):
+        return f" Nombre: {self.nombre}\n Grado: {self.grado}\n Edad: {self.edad}\n Promedio: {self.promedio_de_notas} "
+promedio_total=sumi/5
+estudiante_uno=Mostrar_notas("Camilo","Decimo",14,promedio_total)
+print(estudiante_uno.promedio_notas())

@@ -1,0 +1,25 @@
+from abc import ABC, abstractmethod
+
+class Usuario(ABC):
+    def __init__(self, nombre, contraseña):
+        self.nombre = nombre
+        self.contraseña = contraseña  
+
+    @abstractmethod
+    def autenticar(self, contraseña):
+        pass
+
+class UsuarioSistema(Usuario):
+    def __init__(self, nombre, contraseña):
+        super().__init__(nombre, contraseña)  
+
+    def autenticar(self, contraseña):
+        return self.contraseña == contraseña  
+usuario1 = UsuarioSistema("Santiago Leon", "leon130423")
+
+contraseña_ingresada = input("Ingrese su contraseña: ")
+                                                                                                                                            
+if usuario1.autenticar(contraseña_ingresada):
+    print("Autenticación exitosa.")
+else:
+    print("Error: contraseña incorrecta.")

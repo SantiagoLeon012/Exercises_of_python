@@ -37,5 +37,5 @@ while True:
             
 
 
-    menu=mostrar_menu([],[],[],[])
+    menu=mostrar_menu()
     menu.mostrar_menu()

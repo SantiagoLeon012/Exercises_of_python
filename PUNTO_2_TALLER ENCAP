@@ -1,0 +1,24 @@
+class Pago:
+    def __init__(self, monto):
+        self.__monto = monto         
+        self.__estado = "Pendiente"  
+
+    def realizar_pago(self):
+        if self.__estado == "Pendiente":
+            self.__estado = "Pagado"
+            print("Pago realizado con éxito.")
+        else:
+            print("El pago ya fue procesado.")
+    
+    def mostrar_estado(self):
+        print(f"Estado del pago: {self.__estado}")
+
+    def mostrar_monto(self):
+        print(f"Monto a pagar: ${self.__monto}")
+
+
+pago1 = Pago(500000)
+pago1.mostrar_estado()
+pago1.mostrar_monto()
+pago1.realizar_pago()
+pago1.mostrar_estado()

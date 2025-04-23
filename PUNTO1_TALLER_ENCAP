@@ -1,0 +1,23 @@
+class Estudiante:
+    def __init__(self, nombre):
+        self.__nombre = nombre   
+        self.__nota = 0          
+
+    def poner_nota(self, nota):
+        if 0 <= nota <= 100:
+            self.__nota = nota
+        else:
+            print("Nota invalida")
+    def mostrar_datos_privados(self):
+        print(f"Nombre: {self.__nombre}, Nota: {self.__nota}")
+estudiante1 = Estudiante("Zayra")
+estudiante2 = Estudiante("Luis")
+estudiante3 = Estudiante("Juan")
+
+estudiante1.poner_nota(4.0)
+estudiante2.poner_nota(3.0)
+estudiante3.poner_nota(5.0)
+
+estudiante1.mostrar_datos_privados()
+estudiante2.mostrar_datos_privados()
+estudiante3.mostrar_datos_privados()

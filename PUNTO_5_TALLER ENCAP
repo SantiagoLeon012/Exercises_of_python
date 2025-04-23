@@ -1,0 +1,26 @@
+class Seleccion:
+    def __init__(self):
+        self.__opcion = 1  
+
+    def get_opcion(self):
+        return self.__opcion
+    
+    def set_opcion(self, nueva_opcion):
+        if nueva_opcion in [1, 2, 3]:
+            self.__opcion = nueva_opcion
+        else:
+            print("Opción inválida. Usa 1, 2 o 3.")
+    
+    def ejecutar(self):
+        if self.__opcion == 1:
+            print("Ejecutando opción 1: Saludar")
+        elif self.__opcion == 2:
+            print("Ejecutando opción 2: Despedirse")
+        elif self.__opcion == 3:
+            print("Ejecutando opción 3: Mostrar ayuda")
+
+seleccion = Seleccion()
+seleccion.ejecutar()
+seleccion.set_opcion(2)
+seleccion.ejecutar()
+seleccion.set_opcion(99)

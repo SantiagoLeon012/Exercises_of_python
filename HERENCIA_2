@@ -1,0 +1,19 @@
+class animal:
+    def __init__(self, especie, raza):
+        self.especie=especie
+        self.raza=raza
+    def hacer_sonido(self):
+        pass
+class Perro(animal):
+    def hacer_sonido(self):
+        print(f"Soy un perro:",self.especie ,"\n","Raza:",self.raza)
+        print(" sonido caracteristico: Guau")
+class Gato(animal):
+    def hacer_sonido(self):
+        print(f"Soy un gato:",self.especie ,"\n","Raza:",self.raza)
+        print("sonido caracteristico: Miau")
+        
+perro1=Perro("mamifero","Pastor aleman")   
+perro1.hacer_sonido()
+Gato1=Gato("mamifero","siames")
+Gato1.hacer_sonido()

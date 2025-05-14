@@ -1,0 +1,20 @@
+class vehiculo:
+    def __init__(self,vehiculo,marca,modelo):
+         self.vehiculo=vehiculo
+         self.marca=marca
+         self.modelo=modelo
+       
+class carro(vehiculo):
+    def __init__(self, marca, modelo,vehiculo,numero_puertas):
+        super().__init__(marca, modelo,vehiculo)
+        self.numero_puertas=numero_puertas
+        print(f" Vehiculo:",self.vehiculo,"\n","Marca:",self.marca,"\n","Modelo:",self.modelo,"\n","Puertas:",self.numero_puertas)
+
+class moto(vehiculo):
+     def __init__(self, marca,modelo,vehiculo, tipo_motor):
+        super().__init__(marca, modelo,vehiculo)
+        self.tipo_motor=tipo_motor
+        print(f"\n","Vehiculo:",self.vehiculo,"\n","Marca:",self.marca,"\n","Modelo:",self.modelo,"\n","Tipo de motor:",self.tipo_motor)
+
+carro1=carro("carro","BMW",2023,4)
+moto1=moto("moto","XTZ 125", 2013, "1300 CM cubicos")

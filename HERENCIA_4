@@ -1,0 +1,21 @@
+class persona:
+    def __init__(self,nombre):
+        self.nombre=nombre
+class empleado:
+    def trabajar(self):
+        print(f"Nombre:",self.nombre,"esta trabajando")
+        
+class deportista:
+    def entrenar(self):
+        print(f"Nombre:",self.nombre,"esta entrenando")
+        
+class empleadodeportista(persona,empleado,deportista):
+    def __init__(self, nombre):
+        super().__init__(nombre)
+
+    
+
+emde=empleadodeportista("Cristian")
+emde.trabajar()
+emde.entrenar()
+print(empleadodeportista.__mro__)

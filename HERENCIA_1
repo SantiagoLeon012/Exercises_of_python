@@ -1,0 +1,19 @@
+class Persona:
+    def __init__(self, nombre, edad):
+        self.nombre=nombre
+        self.edad=edad
+    def Presentar(self):
+        print(f"Hola soy",self.nombre , "y tengo", self.edad,"años de edad")
+        
+class Estudiante(Persona):
+    def __init__(self, nombre, edad, carrera):
+       super().__init__(nombre,edad)
+       self.carrera=carrera
+    
+    def Presentar(self):
+        super().Presentar()
+        print(f"Tanbien estudio el programa academico de", self.carrera)
+    
+    
+Estudiante1=Estudiante("Camilo", 20, "Emfermeria")
+Estudiante1.Presentar()

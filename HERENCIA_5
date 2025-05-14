@@ -1,0 +1,11 @@
+class producto:
+    def __init__(self,nombre,precio):
+        self.nombre=nombre
+        self.precio=precio
+class ProductoPerecedero(producto):
+    def __init__(self, nombre, precio,fecha_vencimiento):
+        super().__init__(nombre, precio)
+        self.fecha_vencimiento=fecha_vencimiento
+        print(f" Nombre:",self.nombre,"\n","Precio:",self.precio,"\n","Feha vencimiento:",self.fecha_vencimiento)
+
+Obj1=ProductoPerecedero("Coca-cola",8000, "13-04-23")
